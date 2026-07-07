@@ -1,8 +1,39 @@
 # Zo0n Sites
 
-Современный одностраничный сайт-портфолио для услуги “сайты-визитки для мастеров и малого бизнеса”.
+Основной сайт-портфолио Zo0n Sites для продажи сайтов мастерам, услугам и локальному бизнесу.
 
-Сайт сделан как витрина услуги для клиентов с Авито и личных сообщений: первый экран, блоки для кого подходит услуга, что входит в работу, тарифы, демо-портфолио, процесс работы, FAQ и контакты.
+Публичная ссылка:
+
+```text
+https://zo0n4ik.github.io/zoon-site1/
+```
+
+## Что это за сайт
+
+Zo0n Sites показывает, какие сайты можно сделать для малого бизнеса: с услугами, ценами, фото, портфолио, отзывами, контактами и кнопками связи.
+
+Главная задача сайта - быстро объяснить клиенту:
+
+- что именно я делаю;
+- кому это подходит;
+- сколько примерно стоит;
+- какие есть живые примеры;
+- как связаться со мной.
+
+## Демо-проекты в портфолио
+
+- GearLine Service - https://gearline-service.vercel.app/
+- Lume Flowers - https://lume-flowers-demo.vercel.app/
+- BORODA - https://barbershop-boroda.vercel.app/#booking
+
+## Структура страниц
+
+- Главная - `/`
+- Портфолио - `/portfolio/`
+- Услуги и тарифы - `/services/`
+- Процесс работы - `/process/`
+- FAQ - `/faq/`
+- Контакты - `/contacts/`
 
 ## Технологии
 
@@ -11,42 +42,76 @@
 - TypeScript
 - Tailwind CSS
 - Lucide React
+- Static export для GitHub Pages
 
 ## Локальный запуск
 
-Установите зависимости:
+Установить зависимости:
 
 ```bash
 npm install
 ```
 
-Запустите проект:
+Запустить dev-сервер:
 
 ```bash
 npm run dev
 ```
 
-Откройте сайт в браузере:
+Из-за `basePath: "/zoon-site1"` локально сайт открывается по адресу:
 
 ```text
-http://localhost:3000
+http://localhost:3000/zoon-site1/
 ```
 
-## Production-сборка
+## Сборка
 
 ```bash
 npm run build
 ```
 
-Запуск собранного проекта:
+После сборки Next.js создает статическую папку:
 
-```bash
-npm run start
+```text
+out/
 ```
 
-## Контакты
+## Деплой
 
-Все кнопки связи на сайте ведут в Telegram:
+Сайт деплоится через GitHub Pages.
+
+Workflow находится здесь:
+
+```text
+.github/workflows/deploy.yml
+```
+
+Он выполняет:
+
+1. `npm install`
+2. `npm run build`
+3. добавляет `.nojekyll`
+4. публикует папку `out` в ветку `gh-pages`
+
+В настройках GitHub Pages нужно использовать:
+
+```text
+Source: Deploy from a branch
+Branch: gh-pages
+Folder: / (root)
+```
+
+## Ассеты портфолио
+
+Превью проектов сохранены локально:
+
+```text
+public/portfolio/gearline-preview.png
+public/portfolio/lume-preview.png
+public/portfolio/boroda-preview.png
+```
+
+Все кнопки заказа ведут в Telegram:
 
 ```text
 https://t.me/Zo0n4ik
